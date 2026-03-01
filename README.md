@@ -80,9 +80,37 @@ Follow these instructions to set up the project locally.
    ```
    *The application will be accessible at `http://localhost:5173`. It will automatically connect to the backend WebSocket.*
 
-### 3. Arduino Firmware
-- Flash the `.ino` firmware file (if available in the `backend/arduino_firmware` or hardware directory) to your microcontroller (e.g., Arduino/ESP32).
-- Ensure the hardware is configured to send POST requests with JSON sensor data to the backend API (`/api/sensor`).
+## Dashboard Snapshot
+
+![Dashboard Screenshot](./dashboard_snapshot.png)
+
+### 3. Arduino Firmware (`esp32_firmware`)
+
+The ESP32 microcontroller collects data from attached sensors (DHT11, MQ135, Rain Sensor, LDR) and sends it over Wi-Fi via a POST request to the backend API (`/api/sensor`).
+
+**Hardware Connections (ESP32):**
+- **DHT11 (Temp/Humidity):** Data Pin -> GPIO 4
+- **MQ135 (Air Quality):** Analog Pin -> GPIO 34
+- **Rain Sensor:** Analog Pin -> GPIO 35
+- **LDR (Light):** Analog Pin -> GPIO 32
+- **Buzzer:** Positive -> GPIO 26
+- **LED Alert:** Positive -> GPIO 27
+
+**Setup Instructions:**
+1. Open up the Arduino IDE.
+2. Go to `Tools > Board` and select your ESP32 board model.
+3. Open the firmware source code located at `esp32_firmware/esp32_firmware.ino`.
+4. Install the required libraries in Arduino IDE:
+   - `DHT sensor library` by Adafruit
+   - `WiFi.h` and `HTTPClient.h` (included in ESP32 board package)
+5. Update the Wi-Fi credentials in the script:
+   ```cpp
+   const char* ssid = "YOUR_WIFI_SSID";
+   const char* password = "YOUR_WIFI_PASSWORD";
+   ```
+6. Update the `serverName` to point to the backend's local network IP address (e.g., `http://192.168.1.xxx:5000/api/sensor`).
+7. Connect your ESP32 via USB and click **Upload**.
+8. Once uploaded, open the Serial Monitor (`115200` baud) to verify Wi-Fi connection and sensor readings.
 
 ---
 
