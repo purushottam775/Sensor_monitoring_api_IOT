@@ -11,9 +11,9 @@
 #define BUZZER_PIN 26
 #define LED_PIN 27
 
-const char *ssid = "Redmi Note 9 Pro";
-const char *password = "27072006";
-const char *serverName = "http://IP_Address:5000/api/sensor";
+const char *ssid = "wifi_name";
+const char *password = "password";
+const char *serverName = "http://your_IP_Address:5000/api/sensor";
 
 DHT dht(DHTPIN, DHTTYPE);
 
