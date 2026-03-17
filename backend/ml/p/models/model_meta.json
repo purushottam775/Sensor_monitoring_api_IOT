@@ -1,0 +1,30 @@
+{
+  "trained_at": "2026-03-16T18:48:45.697495+00:00",
+  "model_type": "MultiOutputRegressor(RandomForestRegressor)",
+  "target": "next_step_all_sensors",
+  "features": [
+    "temperature",
+    "humidity",
+    "airQuality",
+    "rainfall",
+    "ldr",
+    "hour",
+    "minute"
+  ],
+  "targets": [
+    "temperature",
+    "humidity",
+    "airQuality",
+    "rainfall",
+    "ldr"
+  ],
+  "prediction_type": "next_time_step",
+  "rows_used": 257,
+  "train_rows": 205,
+  "test_rows": 52,
+  "metrics": {
+    "mae": 61.44643184511638,
+    "rmse": 175.1634123832225,
+    "r2": -0.2770009028980377
+  }
+}

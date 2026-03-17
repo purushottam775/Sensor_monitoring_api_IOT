@@ -1,0 +1,9 @@
+xgboost
+pandas
+numpy
+flask
+flask-cors
+scikit-learn
+joblib
+pymongo
+python-dotenv

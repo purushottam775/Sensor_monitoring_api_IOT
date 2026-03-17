@@ -1,0 +1,25 @@
+{
+  "trained_at": "2026-03-17T16:52:28.163685+00:00",
+  "model_type": "MultiOutputRegressor(XGBRegressor)",
+  "features": [
+    "temperature",
+    "humidity",
+    "airQuality",
+    "rainfall",
+    "ldr",
+    "hour_sin",
+    "hour_cos",
+    "min_sin",
+    "min_cos",
+    "temperature_lag1",
+    "humidity_lag1",
+    "airQuality_lag1",
+    "rainfall_lag1",
+    "ldr_lag1"
+  ],
+  "metrics": {
+    "mae": 133.66372680664062,
+    "rmse": 271.17040882994587,
+    "r2": 0.4877782464027405
+  }
+}
