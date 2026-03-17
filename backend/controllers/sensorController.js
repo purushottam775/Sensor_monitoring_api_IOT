@@ -19,17 +19,17 @@ export const createSensorData = async (req, res) => {
     const { temperature, humidity, airQuality, rainfall, ldr } = req.body;
 
     const tempResult = getTempStatus(temperature);
-    const humResult  = getHumidityStatus(humidity);
-    const airResult  = getAirStatus(airQuality);
+    const humResult = getHumidityStatus(humidity);
+    const airResult = getAirStatus(airQuality);
     const rainResult = getRainStatus(rainfall);
-    const ldrResult  = getLdrStatus(ldr);
+    const ldrResult = getLdrStatus(ldr);
 
     const statusMap = {
       temperature: tempResult.status,
-      humidity:    humResult.status,
-      airQuality:  airResult.status,
-      rainfall:    rainResult.status,
-      ldr:         ldrResult.status,
+      humidity: humResult.status,
+      airQuality: airResult.status,
+      rainfall: rainResult.status,
+      ldr: ldrResult.status,
     };
 
     const overall = getOverallStatus(statusMap);
@@ -39,10 +39,10 @@ export const createSensorData = async (req, res) => {
       status: { ...statusMap, overall },
       labels: {
         temperature: tempResult.label,
-        humidity:    humResult.label,
-        airQuality:  airResult.label,
-        rainfall:    rainResult.label,
-        ldr:         ldrResult.label,
+        humidity: humResult.label,
+        airQuality: airResult.label,
+        rainfall: rainResult.label,
+        ldr: ldrResult.label,
       },
     });
 
